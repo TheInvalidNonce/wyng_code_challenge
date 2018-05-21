@@ -14,18 +14,18 @@
 // ● Empty string, such as ""​ or " "
 
 const removeEmptyFields = (obj) => {
-	for (let i in obj) {
-	  if (obj[i] instanceof Object){ // If this item is an Object instance continue checking recursively
-			removeEmptyFields(obj[i])
-		}
-		if ( 
-		  (obj[i] && obj[i].length <= 1) || // Check if an empty object array
-		  (obj[i] && Object.keys(obj[i]).length === 0) || // Check if an empty object
-		  (obj[i] ===  ''|| obj[i] === null) // Check if empty string or null
-			) { 
-			  console.log('deleting:', obj[i]) // Log out what is being removed
-			  delete obj[i]
-			}
-		}
-	return obj
+  for (let i in obj) {
+    if (obj[i] instanceof Object){ // If this item is an Object instance continue checking recursively
+      removeEmptyFields(obj[i])
+    }
+    if ( 
+      (obj[i] && obj[i].length <= 1) || // Check if an empty object array
+      (obj[i] && Object.keys(obj[i]).length === 0) || // Check if an empty object
+      (obj[i] ===  ''|| obj[i] === null) // Check if empty string or null
+      ) { 
+        console.log('deleting:', obj[i]) // Log out what is being removed
+        delete obj[i]
+      }
+    }
+  return obj
 }
