@@ -19,9 +19,8 @@ const removeEmptyFields = (obj) => {
       removeEmptyFields(obj[i])
     }
     if ( 
-      (obj[i] && obj[i].length <= 1) || // Check if an empty object array
-      (obj[i] && Object.keys(obj[i]).length === 0) || // Check if an empty object
-      (obj[i] ===  ''|| obj[i] === null) // Check if empty string or null
+      (obj[i] && Object.keys(obj[i]).length === 0) || // Check if an empty object or array
+			(obj[i] ===  ''|| obj[i] === ' ' || obj[i] === null) // Check if falsey value/empty string or null
       ) { 
         console.log('deleting:', obj[i]) // Log out what is being removed
         delete obj[i]
